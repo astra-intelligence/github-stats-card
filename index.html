@@ -1,63 +1,330 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GitHub Stats Card — Free Profile README Generator</title>
-<meta name="description" content="Free GitHub profile stats card generator with stars, languages, and premium themes. One-line embed for your README.">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub Stats Card — Free Profile README Generator with Stars & Languages</title>
+<meta name="description" content="Free GitHub profile stats card generator. Generate beautiful SVG cards for your GitHub profile README with stars, followers, repos, languages, and premium themes.">
+<meta property="og:title" content="GitHub Stats Card Generator — Free + Premium">
+<meta property="og:description" content="Generate beautiful profile README stats cards with stars, languages, and premium themes">
+<meta property="og:image" content="https://167.233.135.161:8083/og-preview.png">
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;background:#0d1117;color:#c9d1d9;line-height:1.6;min-height:100vh}
-.container{max-width:680px;margin:0 auto;padding:40px 20px}
-h1{font-size:2.5rem;margin-bottom:0.5rem}
-h1 span{color:#58a6ff}
-.subtitle{color:#8b949e;font-size:1.1rem;margin-bottom:2rem}
-.card{background:#161b22;border:1px solid #30363d;border-radius:12px;padding:1.5rem;margin-bottom:1rem}
-.card h2{font-size:1.1rem;margin-bottom:0.5rem;color:#58a6ff}
-code{display:block;background:#0d1117;padding:12px;border-radius:8px;font-size:0.85rem;margin:0.5rem 0;overflow-x:auto;color:#c9d1d9}
-.btn{display:inline-block;padding:12px 28px;background:#238636;color:#fff;border:none;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;text-decoration:none;margin-top:0.5rem;transition:background 0.2s}
-.btn:hover{background:#2ea043}
-.btn-pro{background:#db61a2;margin-left:8px}
-.btn-pro:hover{background:#bf4b8a}
-.features{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:1rem}
-.feature{background:#161b22;border:1px solid #30363d;border-radius:10px;padding:14px;font-size:0.9rem}
-.feature h3{font-size:0.95rem;margin-bottom:4px;color:#58a6ff}
-.feature p{color:#8b949e;font-size:0.85rem}
-.center{text-align:center}
-.footer{text-align:center;padding:1rem;color:#484f58;font-size:0.8rem}
-</style></head>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  background: #0d1117; color: #c9d1d9; line-height: 1.6;
+  min-height: 100vh;
+}
+.container { max-width: 820px; margin: 0 auto; padding: 0 20px; }
+header {
+  background: linear-gradient(135deg, #161b22, #0d1117);
+  padding: 2.5rem 0 1.5rem; text-align: center;
+  border-bottom: 1px solid #30363d;
+}
+header h1 { font-size: 2.2rem; margin-bottom: 0.4rem; }
+header h1 span { color: #58a6ff; }
+header p { color: #8b949e; font-size: 1rem; }
+.badge-row { margin-top: 0.75rem; display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+.badge { display: inline-block; padding: 4px 12px; background: #21262d; border: 1px solid #30363d; border-radius: 20px; font-size: 0.8rem; color: #8b949e; }
+.badge strong { color: #58a6ff; }
+main { padding: 1.5rem 0; }
+.input-section {
+  background: #161b22; border: 1px solid #30363d;
+  border-radius: 12px; padding: 1.25rem; margin-bottom: 1rem;
+}
+.input-section label { display: block; font-weight: 600; margin-bottom: 0.4rem; font-size: 0.95rem; }
+.input-group { display: flex; gap: 8px; }
+.input-group input {
+  flex: 1; padding: 10px 14px;
+  background: #0d1117; border: 1px solid #30363d;
+  border-radius: 8px; color: #c9d1d9; font-size: 0.95rem;
+  outline: none; transition: border-color 0.2s;
+}
+.input-group input:focus { border-color: #58a6ff; }
+.input-group button {
+  padding: 10px 24px; background: #238636; color: #fff;
+  border: none; border-radius: 8px; font-size: 0.95rem;
+  font-weight: 600; cursor: pointer; transition: all 0.2s;
+  white-space: nowrap;
+}
+.input-group button:hover { background: #2ea043; }
+.input-group button:disabled { opacity: 0.5; cursor: not-allowed; }
+.options-row { display: flex; gap: 10px; margin: 10px 0; align-items: center; flex-wrap: wrap; }
+.options-row select, .options-row input[type="text"] {
+  padding: 8px 12px; background: #0d1117; border: 1px solid #30363d;
+  border-radius: 6px; color: #c9d1d9; font-size: 0.85rem;
+}
+.options-row input[type="text"] { width: 200px; }
+.options-row label { font-size: 0.85rem; color: #8b949e; }
+.card-preview {
+  background: #161b22; border: 1px solid #30363d;
+  border-radius: 12px; padding: 1.5rem; margin-bottom: 1rem;
+  text-align: center; min-height: 320px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+}
+.card-preview .placeholder { color: #484f58; font-size: 1rem; }
+.card-preview svg, .card-preview img { max-width: 100%; height: auto; border-radius: 4px; }
+.embed-section {
+  background: #161b22; border: 1px solid #30363d;
+  border-radius: 12px; padding: 1.25rem; margin-bottom: 1rem;
+  display: none;
+}
+.embed-section h3 { margin-bottom: 0.5rem; color: #58a6ff; font-size: 1rem; }
+.embed-section textarea {
+  width: 100%; padding: 10px; background: #0d1117; border: 1px solid #30363d;
+  border-radius: 8px; color: #c9d1d9; font-family: monospace; font-size: 0.8rem;
+  resize: vertical; min-height: 60px;
+  outline: none;
+}
+.copy-btn {
+  margin-top: 6px; padding: 8px 14px; background: #21262d; color: #c9d1d9;
+  border: 1px solid #30363d; border-radius: 6px; cursor: pointer; font-size: 0.85rem;
+}
+.copy-btn:hover { background: #30363d; }
+.upsell-banner {
+  text-align: center; padding: 0.75rem;
+  background: linear-gradient(135deg, #1a1a2e, #0d1117);
+  border: 1px solid #58a6ff; border-radius: 12px; margin-bottom: 1rem;
+}
+.upsell-banner p { color: #8b949e; font-size: 0.9rem; }
+.upsell-banner a {
+  display: inline-block; padding: 7px 18px; background: #db61a2; color: #fff;
+  border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.9rem;
+  transition: all 0.2s; margin-top: 6px;
+}
+.upsell-banner a:hover { background: #bf4b8a; }
+.upsell-banner .preview-badge { display: inline-block; background: #58a6ff22; color: #58a6ff; padding: 2px 10px; border-radius: 12px; font-size: 0.75rem; margin-bottom: 4px; }
+
+.features {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 1rem;
+}
+.feature {
+  background: #161b22; border: 1px solid #30363d; border-radius: 10px; padding: 14px;
+}
+.feature h3 { font-size: 0.9rem; margin-bottom: 4px; }
+.feature p { font-size: 0.8rem; color: #8b949e; }
+
+.theme-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px;
+  margin: 8px 0;
+}
+.theme-tag {
+  padding: 6px; border-radius: 6px; text-align: center; font-size: 0.75rem;
+  border: 1px solid #30363d; background: #0d1117; color: #8b949e;
+}
+.theme-tag.premium { border-color: #db61a2; color: #db61a2; }
+
+.error-msg { color: #f85149; margin-top: 6px; display: none; font-size: 0.9rem; }
+.loading { display: none; color: #8b949e; font-size: 0.9rem; margin-top: 6px; }
+.success-msg { color: #3fb950; margin-top: 6px; display: none; font-size: 0.9rem; }
+
+.view-embed {
+  display: inline-block; margin-top: 8px; padding: 6px 14px;
+  background: #21262d; border: 1px solid #30363d; border-radius: 6px;
+  color: #58a6ff; text-decoration: none; font-size: 0.85rem; cursor: pointer;
+}
+
+.activate-section {
+  background: #161b22; border: 1px solid #30363d; border-radius: 12px;
+  padding: 1rem; margin-bottom: 1rem; text-align: center;
+}
+.activate-section h3 { font-size: 0.95rem; margin-bottom: 6px; }
+.activate-section .key-input { display: flex; gap: 6px; max-width: 400px; margin: 8px auto; }
+.activate-section .key-input input { flex: 1; }
+.footer { text-align: center; padding: 1rem 0; color: #484f58; font-size: 0.8rem; }
+.footer a { color: #58a6ff; text-decoration: none; }
+</style>
+</head>
 <body>
-<div class="container">
-  <h1><span>GitHub</span> Stats Card</h1>
-  <p class="subtitle">Beautiful profile stats for your README — stars, languages, followers & premium themes</p>
-
-  <div class="center" style="margin-bottom:1.5rem">
-    <a href="http://167.233.135.161:8083" class="btn">Generate Your Card →</a>
-    <a href="https://grantshatz.gumroad.com/l/github-stats-card-pro" class="btn btn-pro" target="_blank">Get Pro — $1</a>
+<header>
+  <div class="container">
+    <h1><span>GitHub</span> Stats Card</h1>
+    <p>Beautiful profile stats for your README — stars, languages, followers & more</p>
+    <div class="badge-row">
+      <span class="badge">✦ <strong>Stars</strong> count</span>
+      <span class="badge"><strong>Language</strong> breakdown</span>
+      <span class="badge">🎨 <strong>8 themes</strong> (5 premium)</span>
+      <span class="badge">Free to use</span>
+    </div>
   </div>
+</header>
+<main>
+  <div class="container">
+    <div class="input-section">
+      <label>GitHub Username</label>
+      <div class="input-group">
+        <input type="text" id="username" placeholder="e.g., torvalds" onkeydown="if(event.key==='Enter') generate()">
+        <button id="gen-btn" onclick="generate()">Generate Card</button>
+      </div>
+      <div class="options-row">
+        <label>Theme:</label>
+        <select id="theme">
+          <option value="dark">Dark (free)</option>
+          <option value="light">Light (free)</option>
+          <option value="ocean">Ocean ★</option>
+          <option value="sunset">Sunset ★</option>
+          <option value="forest">Forest ★</option>
+          <option value="midnight">Midnight ★</option>
+          <option value="copper">Copper ★</option>
+          <option value="plasma">Plasma ★</option>
+        </select>
+        <label>License key (premium):</label>
+        <input type="text" id="license-key" placeholder="gumroad license key" style="width:160px;font-size:0.8rem">
+      </div>
+      <div class="loading" id="loading">Fetching GitHub data and generating card...</div>
+      <div class="error-msg" id="error"></div>
+    </div>
 
-  <div class="features">
-    <div class="feature"><h3>✦ Total Stars</h3><p>Cumulative stars across all repos</p></div>
-    <div class="feature"><h3>🔤 Top Language</h3><p>Most-used language with GitHub color</p></div>
-    <div class="feature"><h3>🎨 8 Themes</h3><p>Dark, Light + 6 premium color schemes</p></div>
-    <div class="feature"><h3>🚫 No Watermark</h3><p>Pro removes the watermark attribution</p></div>
-    <div class="feature"><h3>📊 Stats</h3><p>Followers, repos, gists at a glance</p></div>
-    <div class="feature"><h3>⚡ SVG Embed</h3><p>Live-updating SVG, no screenshots</p></div>
+    <div class="upsell-banner" id="premium-upsell">
+      <div class="preview-badge">✦ Premium</div>
+      <p>Star count, language breakdown, 6 premium themes, and <strong>no watermark</strong></p>
+      <a href="https://grantshatz.gumroad.com/l/github-stats-card-pro" target="_blank">Get Pro — $1</a>
+    </div>
+
+    <div class="card-preview" id="preview">
+      <div class="placeholder">Enter a GitHub username to generate your stats card</div>
+    </div>
+
+    <a class="view-embed" id="show-embed" onclick="toggleEmbed()" style="display:none;text-align:center">📋 Show embed code</a>
+
+    <div class="embed-section" id="embed-section">
+      <h3>Embed in your README</h3>
+      <p style="color:#8b949e;margin-bottom:0.4rem;font-size:0.85rem">
+        Copy and paste this markdown into your GitHub profile README:
+      </p>
+      <textarea id="embed-code" readonly></textarea>
+      <button class="copy-btn" onclick="copyEmbed()">Copy to Clipboard</button>
+    </div>
+
+    <div class="activate-section" id="activate-section">
+      <h3>Already purchased Pro? Activate your license</h3>
+      <p style="color:#8b949e;font-size:0.8rem;margin-bottom:6px">Paste the license key from your Gumroad receipt</p>
+      <div class="key-input">
+        <input type="text" id="activate-key" placeholder="License key..." style="flex:1;padding:8px 12px;background:#0d1117;border:1px solid #30363d;border-radius:6px;color:#c9d1d9">
+        <button onclick="activateKey()" style="padding:8px 16px;background:#238636;color:#fff;border:none;border-radius:6px;font-weight:600;cursor:pointer">Activate</button>
+      </div>
+      <div class="success-msg" id="activate-success"></div>
+      <div class="error-msg" id="activate-error"></div>
+    </div>
+
+    <div class="features">
+      <div class="feature">
+        <h3>✦ Total Stars</h3>
+        <p>Shows cumulative stars across all public repos</p>
+      </div>
+      <div class="feature">
+        <h3>🔤 Top Language</h3>
+        <p>Detects and displays your most-used programming language</p>
+      </div>
+      <div class="feature">
+        <h3>🎨 8 Themes</h3>
+        <p>Dark, Light + 6 premium color schemes</p>
+      </div>
+      <div class="feature">
+        <h3>🚫 No Watermark</h3>
+        <p>Pro removes the attribution watermark from your embedded SVG</p>
+      </div>
+      <div class="feature">
+        <h3>📊 Stats at a Glance</h3>
+        <p>Followers, following, repos, gists — all in one card</p>
+      </div>
+      <div class="feature">
+        <h3>⚡ SVG Embed</h3>
+        <p>Live-updating SVG for your README — no screenshots needed</p>
+      </div>
+    </div>
   </div>
-
-  <div class="card">
-    <h2>One-line embed</h2>
-    <p style="color:#8b949e;font-size:0.9rem">Add to your profile README:</p>
-    <code>![Your GitHub Stats](http://167.233.135.161:8083/card?user=yourusername&theme=dark)</code>
-  </div>
-
-  <div class="card">
-    <h2>API Usage</h2>
-    <p style="color:#8b949e;font-size:0.85rem">Customize theme and premium key:</p>
-    <code>http://167.233.135.161:8083/card?user=torvalds&theme=ocean&key=YOUR_LICENSE_KEY</code>
-  </div>
-
-  <div class="footer">
-    <p>GitHub Stats Card · <a href="https://github.com/astra-intelligence/github-stats-card" style="color:#58a6ff">Source</a> · <a href="https://grantshatz.gumroad.com/l/github-stats-card-pro" style="color:#db61a2">Pro $1</a></p>
+</main>
+<div class="footer">
+  <div class="container">
+    <p>GitHub Stats Card · <a href="https://grantshatz.gumroad.com/l/github-stats-card-pro" target="_blank">Pro $1</a> · Free for open source</p>
   </div>
 </div>
+
+<script>
+async function generate() {
+  const username = document.getElementById('username').value.trim();
+  const theme = document.getElementById('theme').value;
+  const key = document.getElementById('license-key').value.trim();
+  const btn = document.getElementById('gen-btn');
+  const loading = document.getElementById('loading');
+  const error = document.getElementById('error');
+  const preview = document.getElementById('preview');
+  const embedSection = document.getElementById('embed-section');
+  const embedCode = document.getElementById('embed-code');
+  const showEmbed = document.getElementById('show-embed');
+
+  if (!username) { error.textContent = 'Please enter a GitHub username'; error.style.display = 'block'; return; }
+
+  btn.disabled = true; loading.style.display = 'block'; error.style.display = 'none';
+
+  try {
+    // Check if user exists
+    const check = await fetch(`https://api.github.com/users/${username}`);
+    if (!check.ok) {
+      error.textContent = `User "${username}" not found on GitHub`;
+      error.style.display = 'block'; btn.disabled = false; loading.style.display = 'none';
+      return;
+    }
+
+    // Build card URL with optional license key
+    let cardUrl = `/card?user=${encodeURIComponent(username)}&theme=${theme}&t=${Date.now()}`;
+    if (key) cardUrl += `&key=${encodeURIComponent(key)}`;
+
+    preview.innerHTML = `<img src="${cardUrl}" alt="GitHub stats card for ${username}" style="max-width:100%;border-radius:8px">`;
+
+    // Show embed code — without license key (free tier watermark visible)
+    const embed = `![${username}'s GitHub Stats](https://167.233.135.161:8083/card?user=${username}&theme=${theme})`;
+    embedCode.value = embed;
+    showEmbed.style.display = 'inline-block';
+    if (embedSection.style.display !== 'none') embedSection.style.display = 'block';
+  } catch(e) {
+    error.textContent = 'Error generating card. Is the server running?';
+    error.style.display = 'block';
+  }
+
+  btn.disabled = false; loading.style.display = 'none';
+}
+
+function toggleEmbed() {
+  const s = document.getElementById('embed-section');
+  s.style.display = s.style.display === 'none' ? 'block' : 'none';
+}
+
+async function copyEmbed() {
+  const code = document.getElementById('embed-code');
+  try {
+    await navigator.clipboard.writeText(code.value);
+    alert('Copied to clipboard!');
+  } catch { alert('Press Ctrl+C / Cmd+C to copy'); }
+}
+
+async function activateKey() {
+  const key = document.getElementById('activate-key').value.trim();
+  const success = document.getElementById('activate-success');
+  const error = document.getElementById('activate-error');
+  success.style.display = 'none'; error.style.display = 'none';
+  if (!key) { error.textContent = 'Please enter your license key'; error.style.display = 'block'; return; }
+  try {
+    const resp = await fetch('/api/activate', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({license_key: key})
+    });
+    const data = await resp.json();
+    if (data.valid) {
+      success.textContent = '✓ License activated! Premium features unlocked for future requests.';
+      success.style.display = 'block';
+      document.getElementById('license-key').value = key;
+    } else {
+      error.textContent = data.error || 'Invalid license key';
+      error.style.display = 'block';
+    }
+  } catch(e) {
+    error.textContent = 'Could not verify license key. Try again.';
+    error.style.display = 'block';
+  }
+}
+</script>
 </body>
 </html>
