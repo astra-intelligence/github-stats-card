@@ -268,13 +268,13 @@ async function generate() {
     }
 
     // Build card URL with optional license key
-    let cardUrl = `/card?user=${encodeURIComponent(username)}&theme=${theme}&t=${Date.now()}`;
+    let cardUrl = `http://167.233.135.161:8083/card?user=${encodeURIComponent(username)}&theme=${theme}&t=${Date.now()}`;
     if (key) cardUrl += `&key=${encodeURIComponent(key)}`;
 
     preview.innerHTML = `<img src="${cardUrl}" alt="GitHub stats card for ${username}" style="max-width:100%;border-radius:8px">`;
 
     // Show embed code — without license key (free tier watermark visible)
-    const embed = `![${username}'s GitHub Stats](https://167.233.135.161:8083/card?user=${username}&theme=${theme})`;
+    const embed = `![${username}'s GitHub Stats](https://167.233.135.161:8083http://167.233.135.161:8083/card?user=${username}&theme=${theme})`;
     embedCode.value = embed;
     showEmbed.style.display = 'inline-block';
     if (embedSection.style.display !== 'none') embedSection.style.display = 'block';
@@ -306,7 +306,7 @@ async function activateKey() {
   success.style.display = 'none'; error.style.display = 'none';
   if (!key) { error.textContent = 'Please enter your license key'; error.style.display = 'block'; return; }
   try {
-    const resp = await fetch('/api/activate', {
+    const resp = await fetch('http://167.233.135.161:8083/api/activate', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({license_key: key})
