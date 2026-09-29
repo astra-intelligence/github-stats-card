@@ -3,24 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GitHub Stats Card — Free Profile README Generator with Stars & Languages</title>
-<meta name="description" content="Free GitHub profile stats card generator. Generate beautiful SVG cards for your GitHub profile README with stars, followers, repos, languages, and premium themes. No Vercel deploy needed.">
-<meta name="keywords" content="github stats card, github profile readme, github stats generator, github readme stats, profile readme, github stars, github languages, svg card generator">
-<meta property="og:title" content="GitHub Stats Card Generator — Free + Premium">
-<meta property="og:description" content="Generate beautiful profile README stats cards with stars, languages, and premium themes. Free SVG embed for your GitHub profile.">
+<title>Fix Your Broken GitHub Stats Card — Free Working Alternative</title>
+<meta name="description" content="github-readme-stats broken? Free working alternative. Generate beautiful SVG stats cards with stars, languages, followers for your GitHub profile README. No Vercel deploy needed.">
+<meta name="keywords" content="github readme stats broken, fix github stats card, github stats card alternative, github readme stats not working, github profile readme stats, github stats generator, broken stats card 503">
+<meta property="og:title" content="Fix Your Broken GitHub Stats Card — Free Working Alternative">
+<meta property="og:description" content="github-readme-stats returning 503? Use this free alternative. Stars, languages, followers — one line of markdown.">
 <meta property="og:image" content="https://astra-intelligence.github.io/github-stats-card/og-preview.png">
 <meta property="og:url" content="https://astra-intelligence.github.io/github-stats-card/">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="GitHub Stats Card — Free Profile README Stats">
-<meta name="twitter:description" content="Free GitHub stats card generator. Stars, languages, followers in one SVG. No setup required.">
+<meta name="twitter:title" content="Fix Broken GitHub Stats Card — Free Alternative">
+<meta name="twitter:description" content="github-readme-stats down? Free working replacement. One line of markdown.">
 <link rel="canonical" href="https://astra-intelligence.github.io/github-stats-card/">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "GitHub Stats Card",
-  "description": "Free GitHub profile stats card generator. Generate SVG cards with stars, languages, followers for your profile README.",
+  "description": "Free working alternative for the broken github-readme-stats. Generate SVG cards with stars, languages, followers for your profile README.",
   "url": "https://astra-intelligence.github.io/github-stats-card/",
   "applicationCategory": "DeveloperApplication",
   "operatingSystem": "Any",
@@ -47,6 +47,36 @@ header {
 header h1 { font-size: 2.2rem; margin-bottom: 0.4rem; }
 header h1 span { color: #58a6ff; }
 header p { color: #8b949e; font-size: 1rem; }
+.alert-banner {
+  background: linear-gradient(135deg, #1a1a2e, #162022);
+  border: 1px solid #f0883e;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+.alert-banner .alert-title {
+  color: #f0883e;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+.alert-banner p { color: #c9d1d9; font-size: 0.9rem; }
+.alert-banner .cta-link {
+  display: inline-block;
+  padding: 8px 20px;
+  background: #238636;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+.alert-banner .cta-link:hover { background: #2ea043; }
 .badge-row { margin-top: 0.75rem; display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
 .badge { display: inline-block; padding: 4px 12px; background: #21262d; border: 1px solid #30363d; border-radius: 20px; font-size: 0.8rem; color: #8b949e; }
 .badge strong { color: #58a6ff; }
@@ -77,7 +107,6 @@ main { padding: 1.5rem 0; }
   padding: 8px 12px; background: #0d1117; border: 1px solid #30363d;
   border-radius: 6px; color: #c9d1d9; font-size: 0.85rem;
 }
-.options-row input[type="text"] { width: 200px; }
 .options-row label { font-size: 0.85rem; color: #8b949e; }
 .card-preview {
   background: #161b22; border: 1px solid #30363d;
@@ -117,7 +146,6 @@ main { padding: 1.5rem 0; }
 }
 .upsell-banner a:hover { background: #bf4b8a; }
 .upsell-banner .preview-badge { display: inline-block; background: #58a6ff22; color: #58a6ff; padding: 2px 10px; border-radius: 12px; font-size: 0.75rem; margin-bottom: 4px; }
-
 .features {
   display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 1rem;
 }
@@ -126,27 +154,14 @@ main { padding: 1.5rem 0; }
 }
 .feature h3 { font-size: 0.9rem; margin-bottom: 4px; }
 .feature p { font-size: 0.8rem; color: #8b949e; }
-
-.theme-grid {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px;
-  margin: 8px 0;
-}
-.theme-tag {
-  padding: 6px; border-radius: 6px; text-align: center; font-size: 0.75rem;
-  border: 1px solid #30363d; background: #0d1117; color: #8b949e;
-}
-.theme-tag.premium { border-color: #db61a2; color: #db61a2; }
-
 .error-msg { color: #f85149; margin-top: 6px; display: none; font-size: 0.9rem; }
 .loading { display: none; color: #8b949e; font-size: 0.9rem; margin-top: 6px; }
 .success-msg { color: #3fb950; margin-top: 6px; display: none; font-size: 0.9rem; }
-
 .view-embed {
   display: inline-block; margin-top: 8px; padding: 6px 14px;
   background: #21262d; border: 1px solid #30363d; border-radius: 6px;
   color: #58a6ff; text-decoration: none; font-size: 0.85rem; cursor: pointer;
 }
-
 .activate-section {
   background: #161b22; border: 1px solid #30363d; border-radius: 12px;
   padding: 1rem; margin-bottom: 1rem; text-align: center;
@@ -154,25 +169,51 @@ main { padding: 1.5rem 0; }
 .activate-section h3 { font-size: 0.95rem; margin-bottom: 6px; }
 .activate-section .key-input { display: flex; gap: 6px; max-width: 400px; margin: 8px auto; }
 .activate-section .key-input input { flex: 1; }
+.migration-guide {
+  background: #161b22; border: 1px solid #30363d;
+  border-radius: 12px; padding: 1.25rem; margin-bottom: 1rem;
+}
+.migration-guide h2 { color: #58a6ff; font-size: 1.1rem; margin-bottom: 0.5rem; }
+.migration-guide code {
+  background: #0d1117; padding: 2px 6px; border-radius: 4px;
+  font-family: monospace; font-size: 0.85rem; color: #f0883e;
+}
+.migration-guide pre {
+  background: #0d1117; padding: 12px; border-radius: 8px;
+  overflow-x: auto; margin: 8px 0; border: 1px solid #21262d;
+}
+.migration-guide pre code { background: transparent; padding: 0; color: #c9d1d9; }
 .footer { text-align: center; padding: 1rem 0; color: #484f58; font-size: 0.8rem; }
 .footer a { color: #58a6ff; text-decoration: none; }
+@media (max-width: 600px) {
+  .features { grid-template-columns: 1fr; }
+  header h1 { font-size: 1.6rem; }
+  .badge-row { gap: 4px; }
+  .badge { font-size: 0.7rem; padding: 3px 8px; }
+}
 </style>
 </head>
 <body>
 <header>
   <div class="container">
     <h1><span>GitHub</span> Stats Card</h1>
-    <p>Beautiful profile stats for your README — stars, languages, followers & more</p>
+    <p>Free, working alternative for your broken GitHub profile stats</p>
     <div class="badge-row">
       <span class="badge">✦ <strong>Stars</strong> count</span>
       <span class="badge"><strong>Language</strong> breakdown</span>
-      <span class="badge">🎨 <strong>8 themes</strong> (5 premium)</span>
+      <span class="badge">🎨 <strong>8 themes</strong> (6 premium)</span>
       <span class="badge">Free to use</span>
     </div>
   </div>
 </header>
 <main>
   <div class="container">
+    <div class="alert-banner">
+      <div class="alert-title">⚠️ github-readme-stats is DOWN (HTTP 503)</div>
+      <p>If your GitHub profile README stats card is broken, use this free working alternative instead. Just swap the URL — no account, no setup, no Vercel deploy needed.</p>
+      <a class="cta-link" href="#migration" onclick="document.getElementById('migration').scrollIntoView({behavior:'smooth'})">Show me how to fix it →</a>
+    </div>
+
     <div class="input-section">
       <label>GitHub Username</label>
       <div class="input-group">
@@ -219,6 +260,35 @@ main { padding: 1.5rem 0; }
       <button class="copy-btn" onclick="copyEmbed()">Copy to Clipboard</button>
     </div>
 
+    <div class="migration-guide" id="migration">
+      <h2>🔧 How to fix your broken stats card</h2>
+      <p>If you're currently using <code>github-readme-stats.vercel.app</code> in your README and it shows a 503 error, here's how to fix it:</p>
+
+      <h3 style="margin-top:12px;color:#c9d1d9;font-size:0.95rem">Option 1: Interactive generator (free, no setup)</h3>
+      <p>Enter your username above, pick a theme, and copy the embed code. One line of markdown.</p>
+
+      <h3 style="margin-top:12px;color:#c9d1d9;font-size:0.95rem">Option 2: Direct SVG embed</h3>
+      <p>Replace your existing stats card URL with:</p>
+      <pre><code>![Your GitHub Stats](http://167.233.135.161:8085/card?user=YOUR_USERNAME&theme=dark)</code></pre>
+
+      <h3 style="margin-top:12px;color:#c9d1d9;font-size:0.95rem">What's on the card</h3>
+      <ul style="color:#8b949e;font-size:0.85rem;list-style:none;padding:0;margin-top:6px">
+        <li style="padding:3px 0">⭐ Total stars across all public repos</li>
+        <li style="padding:3px 0">🔤 Your top programming language with color</li>
+        <li style="padding:3px 0">📦 Repository count</li>
+        <li style="padding:3px 0">👥 Followers & following</li>
+        <li style="padding:3px 0">🎨 8 themes (Dark, Light + 6 premium)</li>
+      </ul>
+
+      <h3 style="margin-top:12px;color:#c9d1d9;font-size:0.95rem">Free vs Pro</h3>
+      <table style="width:100%;border-collapse:collapse;margin-top:6px;font-size:0.85rem">
+        <tr><td style="padding:6px 8px;border-bottom:1px solid #21262d;color:#8b949e">Dark & Light themes</td><td style="padding:6px 8px;border-bottom:1px solid #21262d;color:#3fb950">Free</td></tr>
+        <tr><td style="padding:6px 8px;border-bottom:1px solid #21262d;color:#8b949e">Stars + language + stats</td><td style="padding:6px 8px;border-bottom:1px solid #21262d;color:#3fb950">Free</td></tr>
+        <tr><td style="padding:6px 8px;border-bottom:1px solid #21262d;color:#8b949e">6 premium themes</td><td style="padding:6px 8px;border-bottom:1px solid #21262d;color:#db61a2">$1 Pro</td></tr>
+        <tr><td style="padding:6px 8px;color:#8b949e">No watermark</td><td style="padding:6px 8px;color:#db61a2">$1 Pro</td></tr>
+      </table>
+    </div>
+
     <div class="activate-section" id="activate-section">
       <h3>Already purchased Pro? Activate your license</h3>
       <p style="color:#8b949e;font-size:0.8rem;margin-bottom:6px">Paste the license key from your Gumroad receipt</p>
@@ -241,7 +311,7 @@ main { padding: 1.5rem 0; }
       </div>
       <div class="feature">
         <h3>🎨 8 Themes</h3>
-        <p>Dark, Light + 6 premium color schemes</p>
+        <p>Dark, Light + 6 premium color schemes (Ocean, Sunset, Forest, Midnight, Copper, Plasma)</p>
       </div>
       <div class="feature">
         <h3>🚫 No Watermark</h3>
@@ -260,11 +330,13 @@ main { padding: 1.5rem 0; }
 </main>
 <div class="footer">
   <div class="container">
-    <p>GitHub Stats Card · <a href="https://grantshatz.gumroad.com/l/github-stats-card-pro" target="_blank">Pro $1</a> · Free for open source</p>
+    <p>GitHub Stats Card · <a href="https://grantshatz.gumroad.com/l/github-stats-card-pro" target="_blank">Pro $1</a> · Free for open source · <a href="https://github.com/astra-intelligence/github-stats-card" target="_blank">GitHub</a></p>
   </div>
 </div>
 
 <script>
+const API_BASE = 'http://167.233.135.161:8085';
+
 async function generate() {
   const username = document.getElementById('username').value.trim();
   const theme = document.getElementById('theme').value;
@@ -282,7 +354,6 @@ async function generate() {
   btn.disabled = true; loading.style.display = 'block'; error.style.display = 'none';
 
   try {
-    // Check if user exists
     const check = await fetch(`https://api.github.com/users/${username}`);
     if (!check.ok) {
       error.textContent = `User "${username}" not found on GitHub`;
@@ -290,19 +361,17 @@ async function generate() {
       return;
     }
 
-    // Build card URL with optional license key
-    let cardUrl = `/card?user=${encodeURIComponent(username)}&theme=${theme}&t=${Date.now()}`;
+    let cardUrl = `${API_BASE}/card?user=${encodeURIComponent(username)}&theme=${theme}&t=${Date.now()}`;
     if (key) cardUrl += `&key=${encodeURIComponent(key)}`;
 
-    preview.innerHTML = `<img src="${cardUrl}" alt="GitHub stats card for ${username}" style="max-width:100%;border-radius:8px">`;
+    preview.innerHTML = `<img src="${cardUrl}" alt="GitHub stats card for ${username}" style="max-width:100%;border-radius:8px" onerror="this.parentElement.innerHTML='<div class=\\'placeholder\\'>Could not load card - server may be offline. Try again later.</div>'">`;
 
-    // Show embed code — without license key (free tier watermark visible)
-    const embed = `![${username}'s GitHub Stats](https://167.233.135.161:8083/card?user=${username}&theme=${theme})`;
+    const embed = `![${username}'s GitHub Stats](${API_BASE}/card?user=${username}&theme=${theme})`;
     embedCode.value = embed;
     showEmbed.style.display = 'inline-block';
     if (embedSection.style.display !== 'none') embedSection.style.display = 'block';
   } catch(e) {
-    error.textContent = 'Error generating card. Is the server running?';
+    error.textContent = 'Error generating card. Is the server running? Try http://167.233.135.161:8085 directly.';
     error.style.display = 'block';
   }
 
@@ -329,7 +398,7 @@ async function activateKey() {
   success.style.display = 'none'; error.style.display = 'none';
   if (!key) { error.textContent = 'Please enter your license key'; error.style.display = 'block'; return; }
   try {
-    const resp = await fetch('/api/activate', {
+    const resp = await fetch(`${API_BASE}/api/activate`, {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({license_key: key})
