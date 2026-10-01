@@ -335,7 +335,7 @@ main { padding: 1.5rem 0; }
 </div>
 
 <script>
-const API_BASE = 'http://167.233.135.161:8085';
+const API_BASE = 'https://mug-prophet-evident-concern.trycloudflare.com';
 
 async function generate() {
   const username = document.getElementById('username').value.trim();
@@ -354,12 +354,15 @@ async function generate() {
   btn.disabled = true; loading.style.display = 'block'; error.style.display = 'none';
 
   try {
-    const check = await fetch(`https://api.github.com/users/${username}`);
-    if (!check.ok) {
-      error.textContent = `User "${username}" not found on GitHub`;
-      error.style.display = 'block'; btn.disabled = false; loading.style.display = 'none';
-      return;
-    }
+    // Only a definitive 404 blocks; rate-limits/network errors must render anyway.
+    try {
+      const check = await fetch(`https://api.github.com/users/${encodeURIComponent(username)}`);
+      if (check.status === 404) {
+        error.textContent = `User "${username}" not found on GitHub`;
+        error.style.display = 'block'; btn.disabled = false; loading.style.display = 'none';
+        return;
+      }
+    } catch (_) { /* rate-limited/blocked — render anyway */ }
 
     let cardUrl = `${API_BASE}/card?user=${encodeURIComponent(username)}&theme=${theme}&t=${Date.now()}`;
     if (key) cardUrl += `&key=${encodeURIComponent(key)}`;
