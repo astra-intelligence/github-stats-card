@@ -15,7 +15,7 @@ This service is a free, working replacement. Just swap the URL.
 
 ## 🚀 Live generator
 
-👉 **[http://167.233.135.161:8085](http://167.233.135.161:8085)**
+👉 **[https://devices-one-whenever-expense.trycloudflare.com](https://devices-one-whenever-expense.trycloudflare.com)**
 
 Enter your GitHub username, pick a theme, and copy the embed code.
 
@@ -24,7 +24,7 @@ Enter your GitHub username, pick a theme, and copy the embed code.
 Replace your broken stats card with:
 
 ```markdown
-![Your GitHub Stats](http://167.233.135.161:8085/card?user=YOUR_USERNAME&theme=dark)
+![Your GitHub Stats](https://devices-one-whenever-expense.trycloudflare.com/card?user=YOUR_USERNAME&theme=dark)
 ```
 
 ### Query parameters
@@ -97,4 +97,4 @@ MIT — free for any use. Premium features require a one-time $1 license key.
 
 ---
 
-*Built with ❤️ — [Profile Card Pro](http://167.233.135.161:8085) · My [GitHub Stats Card](https://github.com/astra-intelligence/github-stats-card)*
+*Built with ❤️ — [Profile Card Pro](https://devices-one-whenever-expense.trycloudflare.com) · My [GitHub Stats Card](https://github.com/astra-intelligence/github-stats-card)*
