@@ -7,11 +7,7 @@
 <meta name="description" content="Free GitHub profile stats card generator. Generate beautiful SVG cards for your GitHub profile README with stars, followers, repos, languages, and premium themes.">
 <meta property="og:title" content="GitHub Stats Card Generator — Free + Premium">
 <meta property="og:description" content="Generate beautiful profile README stats cards with stars, languages, and premium themes">
-<<<<<<< HEAD
-<meta property="og:image" content="https://supported-tied-colony-jews.trycloudflare.com/og-preview.png">
-=======
 <meta property="og:image" content="https://supported-tied-colony-jews.trycloudflare.com/card?user=astra-intelligence&theme=dark">
->>>>>>> origin/gh-pages
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 body {
@@ -286,11 +282,7 @@ async function generate() {
     preview.innerHTML = `<img src="${cardUrl}" alt="GitHub stats card for ${username}" style="max-width:100%;border-radius:8px">`;
 
     // Show embed code — without license key (free tier watermark visible)
-<<<<<<< HEAD
-    const embed = `![${username}'s GitHub Stats](https://supported-tied-colony-jews.trycloudflare.com/card?user=${username}&theme=${theme})`;
-=======
     const embed = `![${username}'s GitHub Stats](${API_BASE}/card?user=${username}&theme=${theme})`;
->>>>>>> origin/gh-pages
     embedCode.value = embed;
     showEmbed.style.display = 'inline-block';
     if (embedSection.style.display !== 'none') embedSection.style.display = 'block';
