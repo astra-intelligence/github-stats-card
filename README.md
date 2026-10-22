@@ -15,7 +15,7 @@ This service is a free, working replacement. Just swap the URL.
 
 ## 🚀 Live generator
 
-👉 **[https://diabetes-son-sim-progressive.trycloudflare.com](https://diabetes-son-sim-progressive.trycloudflare.com)**
+👉 **[https://practitioners-ruled-periodically-flashers.trycloudflare.com](https://practitioners-ruled-periodically-flashers.trycloudflare.com)**
 
 Enter your GitHub username, pick a theme, and copy the embed code.
 
@@ -24,7 +24,7 @@ Enter your GitHub username, pick a theme, and copy the embed code.
 Replace your broken stats card with:
 
 ```markdown
-![Your GitHub Stats](https://diabetes-son-sim-progressive.trycloudflare.com/card?user=YOUR_USERNAME&theme=dark)
+![Your GitHub Stats](https://practitioners-ruled-periodically-flashers.trycloudflare.com/card?user=YOUR_USERNAME&theme=dark)
 ```
 
 ### Query parameters
@@ -97,4 +97,4 @@ MIT — free for any use. Premium features require a one-time $1 license key.
 
 ---
 
-*Built with ❤️ — [Profile Card Pro](https://diabetes-son-sim-progressive.trycloudflare.com) · My [GitHub Stats Card](https://github.com/astra-intelligence/github-stats-card)*
+*Built with ❤️ — [Profile Card Pro](https://practitioners-ruled-periodically-flashers.trycloudflare.com) · My [GitHub Stats Card](https://github.com/astra-intelligence/github-stats-card)*
